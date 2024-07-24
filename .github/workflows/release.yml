@@ -136,12 +136,14 @@ jobs:
             GIT_BRANCH=${{ github.head_ref || github.ref_name }}
             GIT_BUILD_TIME=$(date --utc +%FT%T.%3NZ)
             GIT_COMMIT_ID=${{ github.sha }}
-            PACKAGE_TAG=docker.io/nuvla/ui:${{ env.PROJECT_VERSION }}
+            PACKAGE_TAG=${{ env.PROJECT_VERSION }}
             GITHUB_RUN_NUMBER=${{ github.run_number }}
             GITHUB_RUN_ID=${{ github.run_id }}
             PROJECT_URL=${{ github.server_url }}/${{ github.repository }}
-            PACKAGE_NAME=${{ env.PACKAGE_NAME }}
+            PACKAGE_NAME=alesixsq/nuvla/ui
           push: true
+          tags: >
+            alesixsq/nuvla/ui:${{ env.PROJECT_VERSION }}
 # PACKAGE_TAG=${{ needs.trigger-release.outputs.tag_name }}
 
   notify:
