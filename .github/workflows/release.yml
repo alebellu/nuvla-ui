@@ -105,6 +105,7 @@ jobs:
       #        run: mvn deploy
 
       - name: Set PROJECT_VERSION environment variable
+        working-directory: code
         run: echo "PROJECT_VERSION=`lein update-in :version pr -- version | cut -d '"' -f 2`" >> $GITHUB_ENV
 
       - name: Clean and install npm deps
