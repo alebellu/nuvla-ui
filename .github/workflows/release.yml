@@ -129,8 +129,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
-          file: container/Dockerfile
+          context: container
+          file: Dockerfile
           build-args: |
             GIT_BRANCH=${{ github.head_ref || github.ref_name }}
             GIT_BUILD_TIME=$(date --utc +%FT%T.%3NZ)
