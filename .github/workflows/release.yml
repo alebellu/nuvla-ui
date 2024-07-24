@@ -1,4 +1,4 @@
-name: BUILD
+name: RELEASE
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}
